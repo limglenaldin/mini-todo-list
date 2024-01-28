@@ -1,7 +1,7 @@
 public class AppTest {
     public static void main(String[] args) throws Exception {
         generateTodo();
-        viewShowTodos();
+        viewAddTodo();
     }
 
     public static void generateTodo() {
@@ -50,8 +50,11 @@ public class AppTest {
     /**
      * Presentation Layer
      */
-
     public static void viewShowTodos() {
         App.viewShow();
+    }
+
+    public static void viewAddTodo() {
+        App.viewAdd();
     }
 }

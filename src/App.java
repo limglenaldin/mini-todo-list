@@ -108,7 +108,13 @@ public class App {
     }
 
     public static void viewAdd() {
-        // implementation
+        System.out.println("Menambah Todo");
+        String todo = input("Todo (x jika batal)");
+
+        if (!todo.equals("x")) {
+            add(todo);
+        }
+        viewShow();
     }
 
     public static void viewRemove() {
