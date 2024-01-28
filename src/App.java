@@ -12,7 +12,13 @@ public class App {
      * Service Layer
      */
     public static void show() {
-        // implementation
+        for (int i = 0; i < todos.length; i++) {
+            String todo = todos[i];
+            
+            if (todo != null) {
+                System.out.printf("%d. %s %n", i + 1, todo);
+            }
+        }
     }
 
     public static void add() {
