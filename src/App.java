@@ -4,8 +4,16 @@ public class App {
      */
     public static String[] todos = new String[10];
 
+    public static java.util.Scanner scanner = new java.util.Scanner(System.in);
+
     public static void main(String[] args) throws Exception {
         System.out.println("Hello, World!");
+    }
+
+    public static String input(String word) {
+        System.out.printf("%s: ", word);
+        String data = scanner.nextLine();
+        return data;
     }
 
     /**

@@ -1,12 +1,11 @@
 public class AppTest {
     public static void main(String[] args) throws Exception {
-        App.add("Belajar Java Dasar");
-        App.add("Belajar Java OOP");
-        App.add("Belajar Java Generic");
-        
-        removeTodoOutOfIndex();
-        removeTodoOutOfLength();
-        removeTodo();
+        testInput();
+    }
+
+    public static void testInput() {
+        String name = App.input("Masukkan Nama");
+        System.out.printf("Hello, %s %n", name);
     }
 
     /**
