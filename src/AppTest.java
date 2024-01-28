@@ -1,5 +1,6 @@
 public class AppTest {
     public static void main(String[] args) throws Exception {
+        addTodo();
         showTodos();
     }
 
@@ -11,5 +12,11 @@ public class AppTest {
         App.todos[1] = "Belajar Java OOP";
 
         App.show();
+    }
+
+    public static void addTodo() {
+        for (int i = 0; i < 25; i++) {
+            App.add("Todo ke-" + i);
+        }
     }
 }

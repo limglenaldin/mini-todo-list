@@ -21,8 +21,31 @@ public class App {
         }
     }
 
-    public static void add() {
-        // implementation
+    public static void add(String todo) {
+        boolean isFull = true;
+        for (String el : todos) {
+            if (el == null) {
+                isFull = false;
+                break;
+            }
+        }
+
+        if (isFull) {
+            String[] temp = todos;
+            todos = new String[todos.length * 2];
+
+            for (int i = 0; i < temp.length; i++) {
+                todos[i] = temp[i];
+            }
+        }
+
+
+        for (int i = 0; i < todos.length; i++) {
+            if (todos[i] == null) {
+                todos[i] = todo;
+                break;
+            }
+        }
     }
 
     public static void remove() {
