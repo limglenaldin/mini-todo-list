@@ -48,8 +48,24 @@ public class App {
         }
     }
 
-    public static void remove() {
-        // implementation
+    public static boolean remove(int order) {
+        int index = order - 1;
+
+        if ((index < 1) || (index >= todos.length)) {
+            return false;
+        } else if (todos[index] == null) {
+            return false;
+        } else {
+            for (int i = index; i < todos.length; i++) {
+                if (i == (todos.length -1)) {
+                    todos[i] = null;
+                } else {
+                    todos[i] = todos[i+1];
+                }
+            }
+
+            return true;
+        }
     }
 
     /**
