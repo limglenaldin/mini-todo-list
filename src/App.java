@@ -80,7 +80,31 @@ public class App {
      * Presentation Layer
      */
     public static void viewShow() {
-        // implementation
+        boolean isRunning = true;
+        while (isRunning) {
+            System.out.println("Aplikasi Todo List Sederhana");
+
+            show();
+
+            System.out.println("Menu:");
+            System.out.println("1. Tambah Todo");
+            System.out.println("2. Hapus Todo");
+            System.out.println("99. Selesai");
+
+            String input = input("Masukkan Pilihan");
+            switch (input) {
+                case "1":
+                    viewAdd();
+                case "2":
+                    viewRemove();
+                case "99":
+                    isRunning = false;
+                    break;
+                default:
+                    System.out.println("Pilihan tidak ditemukan");
+                    System.out.println();
+            }
+        }
     }
 
     public static void viewAdd() {

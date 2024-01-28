@@ -1,6 +1,13 @@
 public class AppTest {
     public static void main(String[] args) throws Exception {
-        testInput();
+        generateTodo();
+        viewShowTodos();
+    }
+
+    public static void generateTodo() {
+        App.add("Belajar Java Dasar");
+        App.add("Belajar Java OOP");
+        App.add("Belajar Java Generic");
     }
 
     public static void testInput() {
@@ -38,5 +45,13 @@ public class AppTest {
     public static void removeTodoOutOfIndex() {
         String result = App.remove(0) ? "berhasil" : "gagal";
         System.out.printf("Todo %s dihapus %n", result);
+    }
+
+    /**
+     * Presentation Layer
+     */
+
+    public static void viewShowTodos() {
+        App.viewShow();
     }
 }
