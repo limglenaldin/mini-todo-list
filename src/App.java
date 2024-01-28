@@ -59,7 +59,7 @@ public class App {
     public static boolean remove(int order) {
         int index = order - 1;
 
-        if ((index < 1) || (index >= todos.length)) {
+        if ((index < 0) || (index >= todos.length)) {
             return false;
         } else if (todos[index] == null) {
             return false;
@@ -108,8 +108,9 @@ public class App {
     }
 
     public static void viewAdd() {
+        System.out.println();
         System.out.println("Menambah Todo");
-        String todo = input("Todo (x jika batal)");
+        String todo = input("Masukkan (x jika batal)");
 
         if (!todo.equals("x")) {
             add(todo);
@@ -118,6 +119,14 @@ public class App {
     }
 
     public static void viewRemove() {
-        // implementation
+        System.out.println();
+        System.out.println("Menghapus Todo");
+        String order = input("Nomor Todo yang ingin dihapus (x jika batal)");
+
+        if (!order.equals("x")) {
+            String response = remove(Integer.valueOf(order)) ? "berhasil" : "gagal";
+            System.out.printf("Todo ke-%s %s dihapus %n", order, response);
+        }
+        viewShow();
     }
 }

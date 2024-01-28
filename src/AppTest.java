@@ -1,7 +1,8 @@
 public class AppTest {
     public static void main(String[] args) throws Exception {
         generateTodo();
-        viewAddTodo();
+        showTodos();
+        viewRemoveTodo();
     }
 
     public static void generateTodo() {
@@ -56,5 +57,9 @@ public class AppTest {
 
     public static void viewAddTodo() {
         App.viewAdd();
+    }
+
+    public static void viewRemoveTodo() {
+        App.viewRemove();
     }
 }
