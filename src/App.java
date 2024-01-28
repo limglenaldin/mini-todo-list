@@ -3,11 +3,12 @@ public class App {
      * Repository Layer
      */
     public static String[] todos = new String[10];
+    public static boolean isRunning = true;
 
     public static java.util.Scanner scanner = new java.util.Scanner(System.in);
 
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+        viewShow();
     }
 
     public static String input(String word) {
@@ -22,7 +23,12 @@ public class App {
     public static void show() {
         for (int i = 0; i < todos.length; i++) {
             String todo = todos[i];
-            
+
+            if (i == 0 && todo == null) {
+                System.out.println("[Data Masih Kosong]");
+                break;
+            }
+
             if (todo != null) {
                 System.out.printf("%d. %s %n", i + 1, todo);
             }
@@ -80,7 +86,6 @@ public class App {
      * Presentation Layer
      */
     public static void viewShow() {
-        boolean isRunning = true;
         while (isRunning) {
             System.out.println("Aplikasi Todo List Sederhana");
 
@@ -95,14 +100,18 @@ public class App {
             switch (input) {
                 case "1":
                     viewAdd();
+                    break;
                 case "2":
                     viewRemove();
+                    break;
                 case "99":
                     isRunning = false;
                     break;
                 default:
+                    System.out.println();
                     System.out.println("Pilihan tidak ditemukan");
                     System.out.println();
+                    break;
             }
         }
     }
@@ -115,7 +124,6 @@ public class App {
         if (!todo.equals("x")) {
             add(todo);
         }
-        viewShow();
     }
 
     public static void viewRemove() {
@@ -125,8 +133,10 @@ public class App {
 
         if (!order.equals("x")) {
             String response = remove(Integer.valueOf(order)) ? "berhasil" : "gagal";
-            System.out.printf("Todo ke-%s %s dihapus %n", order, response);
+
+            System.out.println();
+            System.out.printf("[INFO: Todo ke-%s %s dihapus] %n", order, response);
+            System.out.println();
         }
-        viewShow();
     }
 }
